@@ -5,25 +5,21 @@ import { ChevronRight, Droplets, Sparkles, Clock, ShieldCheck, ChevronLeft } fro
 
 const slides = [
   {
-    // WORKING washing machine image (clear & modern)
     url: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=2070&auto=format&fit=crop",
     title: "Premium Care",
     description: "Advanced washing machines for gentle fabric treatment."
   },
   {
-    // High-end Washing Machine (Artisan Care)
     url: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=2070&auto=format&fit=crop",
     title: "Artisan Washing",
     description: "Customized cycles for delicate embroidery and traditional fabrics."
   },
   {
-    // Sharp professional suit
     url: "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?q=80&w=2080&auto=format&fit=crop",
     title: "Pristine Suits",
     description: "Crisp finishing for your professional image."
   },
   {
-    // Fabric / freshness / care
     url: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?q=80&w=1915&auto=format&fit=crop",
     title: "Fabric Freshness",
     description: "Preserving the life of every fiber."
@@ -52,9 +48,9 @@ const Showcase = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
- 
+
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-20">
+    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-20" id="#">
       {/* Subtle Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-1/4" />
       

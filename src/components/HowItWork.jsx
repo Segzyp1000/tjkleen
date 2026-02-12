@@ -7,7 +7,7 @@ export default function HowItWorks() {
   return (
       <main className="max-w-5xl mx-auto px-6 mt-16 ">
         {/* HOW IT WORKS SECTION */}
-        <section id="how-it-works" className="mb-40">
+        <section id="how" className="mb-40">
           <div className="text-center mb-20">
             <h2 className="text-sm uppercase tracking-[0.3em] text-stone-400 font-semibold mb-4">The Experience</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold"> How We Work </h3>

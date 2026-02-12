@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Heart, MapPin, ChevronRight, Zap } from 'lucide-react';
+import  { useState, useEffect } from 'react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const LogoIcon = ({ className }) => (
   <svg viewBox="0 0 200 200" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -41,8 +41,8 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
+   { name: 'How We Work', href: '#how' },
     { name: 'About Us', href: '#about' },
-    { name: 'How We Work', href: '#how' },
     {name: 'Contact', href: '#contact' },
   ];
 

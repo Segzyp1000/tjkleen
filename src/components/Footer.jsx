@@ -1,5 +1,6 @@
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
-import { Facebook } from 'lucide-react';
+import { Facebook, PenOff,Phone, Instagram} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 
 
@@ -13,23 +14,27 @@ const Footer = () => {
                 Bringing sparkles to life, responsibly. Your Clothes, cleaned with care
             </p>
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+          <div className="flex  justify-between items-center gap-10">
             <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-default overflow-x-auto w-full md:w-auto pb-4 md:pb-0">
                <span className="text-sm font-serif font-bold italic tracking-tighter shrink-0"><Facebook /></span>
-               <span className="text-sm font-serif font-bold tracking-widest shrink-0">GQ</span>
-               <span className="text-sm font-serif font-bold shrink-0">BAZAAR</span>
-               <span className="text-sm font-serif font-bold italic shrink-0">The New York Times</span>
+               <span className="text-sm font-serif font-bold tracking-widest shrink-0"><Instagram /></span>
+               <span className="text-sm font-serif font-bold shrink-0"><PenOff /></span>
+  
             </div>
             
-            <div className="flex items-center gap-4 bg-stone-900 text-white px-8 py-4 rounded-full group cursor-pointer hover:bg-stone-800 transition-colors">
-              <ShieldCheck className="text-emerald-400" size={20} />
-              <span className="text-xs font-bold uppercase tracking-widest">View all 1,240 verified reviews</span>
-              <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </div>
+            {/* FIXED CALL TO ACTION */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-6 pointer-events-none">
+        <div className="max-w-4xl mx-auto flex justify-center md:justify-end">
+          <div className="flex items-center gap-4 bg-stone-900 text-white px-8 py-4 rounded-full shadow-2xl shadow-stone-400/20 group cursor-pointer hover:bg-stone-800 transition-all duration-300 pointer-events-auto border border-white/10 backdrop-blur-sm">
+            <FaWhatsapp className="text-emerald-400" size={20} />
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]"><Phone className="inline mr-1" size={12} /> 1-800-555-1234</span>
           </div>
+        </div>
+      </div>
+            </div>  
         </section>      
         </footer>
   )
 }
 
-export default Footer
+export default Footer    

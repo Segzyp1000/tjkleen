@@ -3,15 +3,15 @@ import { ChevronRight, Droplets, Sparkles, Clock, ShieldCheck, ChevronLeft } fro
 
 
 
- const slides = [
- {
-    // Professional modern laundry setup
-    url: "https://unsplash.com/photos/a-woman-is-holding-a-towel-in-front-of-a-washing-machine-0mwonQtgH4E?q=80&w=2070&auto=format&fit=crop",
+const slides = [
+  {
+    // WORKING washing machine image (clear & modern)
+    url: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=2070&auto=format&fit=crop",
     title: "Premium Care",
-    description: "Modern machinery for gentle fabric treatment."
+    description: "Advanced washing machines for gentle fabric treatment."
   },
-{
-    // High-end Washing Machine (The new Artisan Care image)
+  {
+    // High-end Washing Machine (Artisan Care)
     url: "https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?q=80&w=2070&auto=format&fit=crop",
     title: "Artisan Washing",
     description: "Customized cycles for delicate embroidery and traditional fabrics."
@@ -23,6 +23,7 @@ import { ChevronRight, Droplets, Sparkles, Clock, ShieldCheck, ChevronLeft } fro
     description: "Crisp finishing for your professional image."
   },
   {
+    // Fabric / freshness / care
     url: "https://images.unsplash.com/photo-1489274495757-95c7c837b101?q=80&w=1915&auto=format&fit=crop",
     title: "Fabric Freshness",
     description: "Preserving the life of every fiber."
@@ -88,7 +89,7 @@ const Showcase = () => {
                 Book a Collection
               </button>
               <button className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors border border-slate-100 hover:border-blue-100">
-                View Price List
+                How We Work
                 <ChevronRight size={16} />
               </button>
             </div>
@@ -115,7 +116,7 @@ const Showcase = () => {
 
            {/* Right Content: Animated Visual Showcase */}
           <div className="w-full lg:w-1/2 relative order-1 lg:order-2">
-            <div className="relative z-10 aspect-[4/5] overflow-hidden shadow-2xl shadow-slate-200 rounded-[2rem] md:rounded-[3rem] bg-slate-100 group">
+            <div className="relative z-10 aspect-4/5 overflow-hidden shadow-2xl shadow-slate-200 rounded-4xl mdounded-[3rem] bg-slate-100 group">
               
               {/* Image Slides */}
               {slides.map((slide, index) => (
@@ -133,7 +134,7 @@ const Showcase = () => {
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent opacity-60" />
                 </div>
               ))}
 
@@ -154,7 +155,7 @@ const Showcase = () => {
                       className="h-1 w-8 rounded-full bg-white/20 overflow-hidden"
                     >
                       <div 
-                        className={`h-full bg-white transition-all duration-[5000ms] ease-linear ${
+                        className={`h-full bg-white transition-all duration-5000 ease-linear ${
                           index === currentSlide ? 'w-full' : 'w-0'
                         }`}
                         style={{ transitionDuration: index === currentSlide ? '5000ms' : '0ms' }}
@@ -183,7 +184,7 @@ const Showcase = () => {
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-slate-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 "/>
             
             {/* Minimalist Floating Label */}
-            <div className="absolute bottom-10 -right-6 z-20 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-slate-50 max-w-[200px] animate-bounce-subtle mt-29">
+            <div className="absolute bottom-10 -right-6 z-20 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-slate-50 max-w-50 animate-bounce-subtle mt-29">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Live Operations</span>

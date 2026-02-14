@@ -4,7 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="mt-20 border-t border-stone-200 bg-white">
+      <footer className="mt-20 border-t border-stone-200 bg-gray-600">
         <section className="max-w-4xl mx-auto px-6 py-16">
           
           {/* Top Message */}
@@ -12,14 +12,14 @@ const Footer = () => {
             <h2 className="text-sm uppercase tracking-[0.3em] text-stone-400 font-semibold mb-4">
               Thank you for choosing us
             </h2>
-            <p className="text-lg text-stone-500 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-50 max-w-2xl mx-auto">
               Bringing sparkles to life, responsibly. Your clothes, cleaned with care.
             </p>
           </div>
 
           {/* Social Icons */}
           <div className="flex justify-center md:justify-between items-center gap-10">
-            <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer">
+            <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer text-white">
               
               <Facebook className="w-5 h-5" />
               <Instagram className="w-5 h-5" />

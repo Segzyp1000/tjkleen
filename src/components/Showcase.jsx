@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { ChevronRight, Droplets, Sparkles, Clock, ShieldCheck, ChevronLeft } from 'lucide-react';
 
@@ -54,7 +54,7 @@ const Showcase = () => {
 
  
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-20" id='showcase'>
+    <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pt-20">
       {/* Subtle Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 translate-x-1/4" />
       
@@ -83,13 +83,20 @@ const Showcase = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-5">
-              <button className="bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-blue-600 transition-all duration-300 shadow-sm">
-                Book a Collection
-              </button>
-              <button className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors border border-slate-100 hover:border-blue-100">
-                View Price List
-                <ChevronRight size={16} />
-              </button>
+              <Link
+  to="/contact"
+  className="bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-blue-600 transition-all duration-300 shadow-sm inline-flex items-center justify-center"
+>
+  Book a Collection
+</Link>
+
+<Link
+  to="/#services"
+  className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors border border-slate-100 hover:border-blue-100"
+>
+  View Price List
+  <ChevronRight size={16} />
+</Link>
             </div>
 
             {/* Calm Trust Indicators */}
@@ -182,12 +189,12 @@ const Showcase = () => {
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-slate-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 "/>
             
             {/* Minimalist Floating Label */}
-            <div className="absolute bottom-10 -right-6 z-20 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-slate-50 max-w-50animate-bounce-subtle mt-29">
+            <div className="absolute bottom-10 -right-6 z-20 bg-white/95 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-slate-50 max-w-50animate-bounce-subtle ">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">Live Operations</span>
               </div>
-              <p className="text-sm font-medium text-slate-800 leading-snug">Processing orders anywhere in Lagos.</p>
+          
             </div> 
           </div>
 

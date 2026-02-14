@@ -1,17 +1,16 @@
-import { useState } from 'react';
-import { 
-  ArrowRight, 
-  Zap, 
-  Sparkles, 
-  Waves, 
-  Heart, 
-  Wind, 
-  Home, 
-  Truck 
-} from 'lucide-react';
-import {servicesData} from '../data';
-
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Zap,
+  Sparkles,
+  Waves,
+  Heart,
+  Wind,
+  Home,
+  Truck,
+} from "lucide-react";
+import { servicesData } from "../data";
 
 const Services = () => {
   const [hoveredId, setHoveredId] = useState(null);
@@ -29,7 +28,10 @@ const Services = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-slate-50 font-sans text-slate-900 mt-16" id='services'>
+    <div
+      className="w-full min-h-screen bg-slate-50 font-sans text-slate-900 mt-16"
+      id="services"
+    >
       {/* Header Section */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-5xl mx-auto text-center">
@@ -39,13 +41,17 @@ const Services = () => {
               Exclusive Services
             </span>
           </div>
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight">
             Meticulous care for <br />
-            <span className="font-semibold italic text-blue-600">every fiber.</span>
+            <span className="font-semibold italic text-blue-600">
+              every fiber.
+            </span>
           </h2>
+
           <p className="max-w-2xl mx-auto text-slate-500 text-lg font-light leading-relaxed">
-            We don't just clean clothes; we restore them. Discover our range of specialized 
-            treatments tailored to your wardrobe's specific needs.
+            We don't just clean clothes; we restore them. Discover our range of
+            specialized treatments tailored to your wardrobe's specific needs.
           </p>
         </div>
       </section>
@@ -68,17 +74,19 @@ const Services = () => {
 
                 <div className="relative z-10">
                   {/* Icon Box */}
-                  <div className={`w-14 h-14 rounded-2xl ${service.lightColor} flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg`}>
-                    <div className={service.color.replace('bg-', 'text-')}>
+                  <div
+                    className={`w-14 h-14 rounded-2xl ${service.lightColor} flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg`}
+                  >
+                    <div className={service.color.replace("bg-", "text-")}>
                       {getIcon(service.id)}
                     </div>
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  
-                  <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm group-hover:text-slate-700 transition-colors]">
+
+                  <p className="text-slate-500 font-light leading-relaxed mb-8 text-sm group-hover:text-slate-700 transition-colors">
                     {service.description}
                   </p>
 
@@ -87,9 +95,13 @@ const Services = () => {
                     <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
                       Service Includes
                     </p>
+
                     {service.features.map((feature, fIdx) => (
-                      <div key={fIdx} className="flex items-center gap-4 group/item">
-                        <div className={`shrink-0 w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-400 transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-500 group-hover:text-white`}>
+                      <div
+                        key={fIdx}
+                        className="flex items-center gap-4 group/item"
+                      >
+                        <div className="shrink-0 w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-400 transition-all duration-300 group-hover:border-blue-500 group-hover:bg-blue-500 group-hover:text-white">
                           {fIdx + 1}
                         </div>
                         <span className="text-sm font-medium text-slate-600 group-hover:text-slate-900 transition-colors">
@@ -100,13 +112,22 @@ const Services = () => {
                   </div>
                 </div>
 
-                {/* Footer Link */} 
+                {/* Footer Link (Now Using React Router) */}
                 <div className="mt-10 pt-6 flex items-center justify-between border-t border-slate-50">
-                  <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-blue-600 transition-colors">
+                  <Link
+                    to="/contact"
+                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-blue-600 transition-colors"
+                  >
                     Book Now
-                    <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                  </button>
-                  <div className={`w-2 h-2 rounded-full ${service.color} transition-all duration-500 group-hover:scale-[2.5]`} />
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
+                  </Link>
+
+                  <div
+                    className={`w-2 h-2 rounded-full ${service.color} transition-all duration-500 group-hover:scale-[2.5]`}
+                  />
                 </div>
               </div>
             ))}
@@ -117,4 +138,4 @@ const Services = () => {
   );
 };
 
-export default Services
+export default Services;

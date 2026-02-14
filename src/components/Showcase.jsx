@@ -77,9 +77,7 @@ const Showcase = () => {
               </h1>
 
               <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed max-w-lg">
-                Experience a more refined way to care for your wardrobe. 
-                We combine gentle cleaning techniques with modern convenience, 
-                giving you more time for what truly matters.
+                 Bringing sparkles to life, responsibly. Your clothes, cleaned with care.
               </p>
             </div>
 

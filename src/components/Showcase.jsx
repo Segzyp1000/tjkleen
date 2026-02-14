@@ -84,19 +84,13 @@ const Showcase = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-5">
               <Link
-  to="/contact"
+  to="/#services"
   className="bg-slate-900 text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-blue-600 transition-all duration-300 shadow-sm inline-flex items-center justify-center"
 >
-  Book a Collection
+  View How We Work
 </Link>
 
-<Link
-  to="/#services"
-  className="flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors border border-slate-100 hover:border-blue-100"
->
-  View Price List
-  <ChevronRight size={16} />
-</Link>
+
             </div>
 
             {/* Calm Trust Indicators */}

@@ -35,7 +35,7 @@ const Navbar = () => {
     { name: "Services", to: "/#services" },
     { name: "How It Works", to: "/#how" },
     { name: "Testimonials", to: "/#testimonials" },
-    { name: "Contact", to: "/contact" },
+
    
   ];
 
@@ -108,14 +108,12 @@ const Navbar = () => {
                   <span className="text-[10px] font-bold text-slate-400 uppercase leading-none mb-1">
                     Book Now
                   </span>
-                  <span className="text-sm font-black text-slate-800 leading-none">
-                    0800-TJAY-KLEEN
-                  </span>
+                  
                 </div>
               </div>
 
-              <Link to="/scheduled" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:scale-95">
-                Schedule Pick-up
+              <Link to="/contact" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:scale-95">
+               Contact
               </Link>
             </div>
 
@@ -171,11 +169,11 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-            <Link to="/scheduled" 
+            <Link to="/contact" 
                 onClick={() => setIsOpen(false)}>
              <div className="p-8 bg-slate-900 rounded-t-[3rem]">
             <button className="w-full bg-blue-600 text-white py-5 rounded-2xl font-bold text-base shadow-xl active:scale-95 transition-transform">
-              Schedule Pick-up
+              Contact
             </button>
           </div>
             </Link>

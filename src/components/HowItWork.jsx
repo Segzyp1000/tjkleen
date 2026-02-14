@@ -5,7 +5,7 @@ import { WORKFLOW_STEPS } from "../data";
 
 export default function HowItWorks() {
   return (
-      <main className="max-w-5xl mx-auto px-6 mt-16 ">
+      <main className="max-w-5xl mx-auto px-6 mt-16 " id='how'>
         {/* HOW IT WORKS SECTION */}
         <section id="how" className="mb-40">
           <div className="text-center mb-20">

@@ -3,7 +3,7 @@ import { TESTIMONIALS } from "../data";
 
 
 const TestimonialCard = ({ name, role, content, service }) => (
-  <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 flex flex-col gap-6 hover:shadow-md transition-shadow">
+  <div className="bg-white p-8 rounded-3xl shadow-sm border border-stone-100 flex flex-col gap-6 hover:shadow-md transition-shadow" id="testimonials">
     <div className="flex gap-1 text-amber-400">
       {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
     </div>

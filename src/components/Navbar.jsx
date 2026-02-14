@@ -104,12 +104,7 @@ const Navbar = () => {
                 <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
                   <Phone size={18} />
                 </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase leading-none mb-1">
-                    Book Now
-                  </span>
-                  
-                </div>
+                
               </div>
 
               <Link to="/contact" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:scale-95">

@@ -100,13 +100,6 @@ const Navbar = () => {
 
             {/* Action Area */}
             <div className="hidden md:flex items-center gap-6">
-              <div className="hidden xl:flex items-center gap-3 pr-6 border-r border-slate-200">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-                  <Phone size={18} />
-                </div>
-                
-              </div>
-
               <Link to="/contact" className="bg-linear-to-r from-blue-600 to-blue-700 text-white px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-wider transition-all hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 active:scale-95">
                Contact
               </Link>

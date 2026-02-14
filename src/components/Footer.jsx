@@ -14,7 +14,7 @@ const Footer = () => {
                 Bringing sparkles to life, responsibly. Your Clothes, cleaned with care
             </p>
           </div>
-          <div className="flex  justify-between items-center gap-10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
             <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-default overflow-x-auto w-full md:w-auto pb-4 md:pb-0">
                <span className="text-sm font-serif font-bold italic tracking-tighter shrink-0"><Facebook /></span>
                <span className="text-sm font-serif font-bold tracking-widest shrink-0"><Instagram /></span>

@@ -1,6 +1,6 @@
 
 import Services from "../components/Services";
-import Home from "../components/Home"
+import HomePage from "../components/HomePage"
 import HowItWorks from "../components/HowItWork";
 import Testimonial from "../components/Testimonial";
 
@@ -9,7 +9,7 @@ import Testimonial from "../components/Testimonial";
 function Home() {
   return (
     <>
-      <Home />
+      <HomePage />
       <Services />
       <HowItWorks />
       <Testimonial />

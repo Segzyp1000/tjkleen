@@ -1,5 +1,5 @@
-import { Facebook, PenOff, Instagram } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
               Thank you for choosing us
             </h2>
             <p className="text-lg text-slate-50 max-w-2xl mx-auto">
-            "Bringing the sparkle back to your wardrobe—responsibly sourced, professionally cleaned, and handled with care."
+            "Bringing the sparkle back to your wardrobe and we handled your items with care."
             </p>
           </div>
 
@@ -21,9 +21,17 @@ const Footer = () => {
           <div className="flex justify-center md:justify-between items-center gap-10">
             <div className="flex items-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-pointer text-white">
               
-              <Facebook className="w-5 h-5" />
-              <Instagram className="w-5 h-5" />
-              <PenOff className="w-5 h-5" />
+              
+              <a href="https://www.instagram.com/tjaykleen?igsh=MW9lazV4c2VmMnUwOA==/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="w-5 h-5" />
+              </a>
+
+              <a href="mailto:tjaykleen@gmail.com">
+                <IoMdMail className="w-5 h-5" />
+              </a>
+
+
+            
               
             </div>
 

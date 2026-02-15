@@ -118,7 +118,7 @@ const Services = () => {
                     to="/contact"
                     className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-blue-600 transition-colors"
                   >
-                    Book Now
+                    Contact Us
                     <ArrowRight
                       size={14}
                       className="transition-transform group-hover:translate-x-1"

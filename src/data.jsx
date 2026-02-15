@@ -66,14 +66,14 @@ export  const TESTIMONIALS = [
     name: "Olajide Adebayo",
     role: "Creative Director",
     content: "The level of detail is unparalleled. They didn't just clean my vintage Dior blazer; they restored the structure. It came back looking better than the day I bought it.",
-    service: "Signature Dry Cleaning",
+    service: "Deep Cleaning & Restoration",
     rating: 5
   },
   {
     name: "Sarah Olujoke",
     role: "Architect",
-    content: "Living in the city, I don't have time for laundry logistics. Signature Valet is seamless. The app-based scheduling and the professional valets make it worth every penny.",
-    service: "Executive Wash & Fold",
+    content: "Living in the city, I don't have time for laundry logistics. Tjay Kleen is seamless. I schedule a pickup, and my clothes come back impeccably cleaned and pressed. It's like having a personal dry cleaner on call.",
+    service: "Valet Collection",
     rating: 5
   },
   {
@@ -96,8 +96,8 @@ export  const TESTIMONIALS = [
 export const WORKFLOW_STEPS = [
   {
     number: "01",
-    title: "Schedule & Pickup",
-    description: "Book your slot online or via text. Our valet arrives at your door with custom garment bags, ready to handle your items with care.",
+    title: "Pick Up & Drop-Off",
+    description: "Schedule a convenient pickup time, and our rep will collect your items from your doorstep. Also, the option of coming to our office to drop off items is available.",
     icon: Calendar,
     color: "bg-blue-50 text-blue-600"
   },

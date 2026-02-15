@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import toast from "react-hot-toast";
-import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const Contact = () => {
-  const formRef = useRef(); // Useful for EmailJS to grab form data directly
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,33 +47,43 @@ const Contact = () => {
     try {
       setLoading(true);
 
-      // --- EMAILJS INTEGRATION ---
-      // Replace these strings with your actual EmailJS IDs
-      await emailjs.send(
-        "service_ujlflhi", 
-        "template_1234567890", 
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
+      // 1. Send the data to Formspree
+      const response = await fetch("https://formspree.io/f/mqedqgln", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        "YyDMPoSp0b-W7k5Qh_"
-      );
-
-      toast.success("Message sent successfully! 🎉");
-
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
+        body: JSON.stringify(formData),
       });
 
+      if (response.ok) {
+        // 2. TRIGGER SUCCESS TOAST
+        toast.success("Message submitted successfully! 🎉", {
+          duration: 5000,
+          position: "top-center",
+          style: {
+            background: "#1e293b",
+            color: "#fff",
+            fontSize: "10px",
+            borderRadius: "14px",
+            fontWeight: "600",
+          },
+        });
+
+        // 3. Clear the form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        const data = await response.json();
+        toast.error(data.errors ? data.errors[0].message : "Submission failed.");
+      }
     } catch (error) {
-      console.error("Email Error:", error);
-      toast.error("Failed to send message. Please try again later.");
+      toast.error("Something went wrong. Please check your connection.");
     } finally {
       setLoading(false);
     }
@@ -130,7 +139,7 @@ const Contact = () => {
 
                 <div className="flex items-center gap-3">
                   <span className="bg-blue-50 p-3 rounded-full">📍</span>
-                  <span className="font-bold">Lagos, Nigeria</span>
+                  <span className="font-bold">Ikorodu, Agric, Asolo, Agbede opposite MRS filling station</span>
                 </div>
               </div>
             </div>
@@ -142,6 +151,7 @@ const Contact = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                <Toaster position="top-center" />
                 <div className="space-y-2">
                   <label className="block text-[11px] font-black text-slate-400 mb-1 uppercase tracking-widest ml-1">
                     Full Name
@@ -153,7 +163,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium text-gray-900"
                   />
                 </div>
 
@@ -168,7 +178,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium text-gray-900"
                   />
                 </div>
 
@@ -183,7 +193,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Write your message here..."
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none resize-none transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none resize-none transition-all font-medium text-gray-900"
                   />
                 </div>
 

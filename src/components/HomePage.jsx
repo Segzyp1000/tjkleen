@@ -34,7 +34,7 @@ const slides = [
   },
 ];
 
-const Home = () => {
+const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -81,8 +81,8 @@ const Home = () => {
               </h1>
 
               <p className="text-base md:text-lg text-slate-500 font-light leading-relaxed max-w-lg">
-                "Bringing the sparkle back to your wardrobe—responsibly sourced, professionally cleaned, and handled with care."
-              </p>
+                "We always ensure to secure the satisfaction of our customers at all time at tjaykleen"
+             </p>
             </div>
 
             {/* ✅ Updated CTAs */}
@@ -210,4 +210,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

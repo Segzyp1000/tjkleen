@@ -22,7 +22,7 @@ const TestimonialCard = ({ name, role, content, service }) => (
 
 export default function Testimonials() {
   return (
-    <div className="min-h-screen bg-slate-50 text-stone-900 font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50 text-stone-900 font-sans antialiased overflow-x-hidden">
       <main className="max-w-5xl mx-auto px-6 pt-16 pb-24">
         {/* TESTIMONIALS SECTION */}
         <section id="testimonials" className="mb-40">

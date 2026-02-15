@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-slate-50">
+    <div className="bg-gray-50">
       {/* Hero Section */}
       <div className="relative w-full h-[40vh] md:h-[60vh] overflow-hidden">
         <img
@@ -136,7 +136,7 @@ const Contact = () => {
             </div>
 
             {/* Right: Form */}
-            <div className="bg-slate-50/50 p-8 md:p-10 rounded-3xl border border-slate-100">
+            <div className="bg-gray-50 p-8 md:p-10 rounded-3xl border border-slate-100">
               <h2 className="text-2xl font-black text-slate-900 mb-8">
                 Send a Message
               </h2>

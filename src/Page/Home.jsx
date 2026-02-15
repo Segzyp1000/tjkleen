@@ -1,6 +1,6 @@
 
 import Services from "../components/Services";
-import Showcase from "../components/Showcase";
+import Home from "../components/Home"
 import HowItWorks from "../components/HowItWork";
 import Testimonial from "../components/Testimonial";
 
@@ -9,7 +9,7 @@ import Testimonial from "../components/Testimonial";
 function Home() {
   return (
     <>
-      <Showcase />
+      <Home />
       <Services />
       <HowItWorks />
       <Testimonial />

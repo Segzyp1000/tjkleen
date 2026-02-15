@@ -29,7 +29,7 @@ const Services = () => {
 
   return (
     <div
-      className="w-full min-h-screen bg-slate-50 font-sans text-slate-900 mt-16"
+      className="w-full min-h-screen bg-gray-50 font-sans text-slate-900 mt-16"
       id="services"
     >
       {/* Header Section */}

@@ -34,7 +34,7 @@ const slides = [
   },
 ];
 
-const Showcase = () => {
+const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -210,4 +210,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default Home;

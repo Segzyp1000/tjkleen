@@ -13,7 +13,7 @@ const Footer = () => {
               Thank you for choosing us
             </h2>
             <p className="text-lg text-slate-50 max-w-2xl mx-auto">
-              Bringing sparkles to life, responsibly. Your clothes, cleaned with care.
+            "Bringing the sparkle back to your wardrobe—responsibly sourced, professionally cleaned, and handled with care."
             </p>
           </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
       {/* FLOATING WHATSAPP BUTTON */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="https://wa.me/2348000000000"
+          href="https://wa.me/2348090177902"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-xl shadow-emerald-300/40 hover:scale-110 active:scale-95 transition-all duration-300"

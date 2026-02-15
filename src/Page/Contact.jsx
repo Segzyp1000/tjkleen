@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef(); // Useful for EmailJS to grab form data directly
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,22 +25,18 @@ const Contact = () => {
       toast.error("Full name is required");
       return false;
     }
-
     if (!formData.email.trim()) {
       toast.error("Email is required");
       return false;
     }
-
     if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      toast.error("Enter a valid email address");
+      toast.error("Please enter a valid email address");
       return false;
     }
-
     if (!formData.message.trim()) {
       toast.error("Message cannot be empty");
       return false;
     }
-
     return true;
   };
 
@@ -50,11 +48,23 @@ const Contact = () => {
     try {
       setLoading(true);
 
-      // Simulate API call (replace with EmailJS later if needed)
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      // --- EMAILJS INTEGRATION ---
+      // Replace these strings with your actual EmailJS IDs
+      await emailjs.send(
+        "service_ujlflhi", 
+        "template_1234567890", 
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "YyDMPoSp0b-W7k5Qh_"
+      );
 
-      toast.success("Message submitted successfully 🎉");
+      toast.success("Message sent successfully! 🎉");
 
+      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -63,7 +73,8 @@ const Contact = () => {
       });
 
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.error("Email Error:", error);
+      toast.error("Failed to send message. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -71,15 +82,13 @@ const Contact = () => {
 
   return (
     <div className="bg-slate-50">
-
       {/* Hero Section */}
-      <div className="relative w-full h-[60vh] overflow-hidden">
+      <div className="relative w-full h-[40vh] md:h-[60vh] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=1000"
           alt="Laundry"
           className="w-full h-full object-cover opacity-80"
         />
-
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-white text-4xl md:text-5xl font-black tracking-tight">
             Get In Touch
@@ -90,24 +99,39 @@ const Contact = () => {
       {/* Contact Section */}
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="bg-white rounded-3xl shadow-xl p-8 md:p-14">
-
           <div className="grid md:grid-cols-2 gap-14">
-
+            
             {/* Left: Contact Info */}
             <div>
               <h2 className="text-3xl font-black text-slate-900 mb-6">
                 Contact Information
               </h2>
-
               <p className="text-slate-600 mb-8 text-base leading-relaxed">
                 Have questions about our services or want to schedule a pickup?
                 Reach out and our team will respond as soon as possible.
               </p>
 
-              <div className="space-y-4 text-slate-700 text-sm">
-                <p>📞 0800-TJAY-KLEEN</p>
-                <p>📧 support@tjaykleen.com</p>
-                <p>📍 Lagos, Nigeria</p>
+              <div className="space-y-6 text-slate-700 text-sm">
+                <a 
+                  href="tel:0800TJAYKLEEN" 
+                  className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
+                >
+                  <span className="bg-blue-50 p-3 rounded-full group-hover:bg-blue-100">📞</span>
+                  <span className="font-bold">08075490118</span>
+                </a>
+
+                <a 
+                  href="mailto:tjaykleen@gmail.com" 
+                  className="flex items-center gap-3 hover:text-blue-600 transition-colors group"
+                >
+                  <span className="bg-blue-50 p-3 rounded-full group-hover:bg-blue-100">📧</span>
+                  <span className="font-bold">tjaykleen@gmail.com</span>
+                </a>
+
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-50 p-3 rounded-full">📍</span>
+                  <span className="font-bold">Lagos, Nigeria</span>
+                </div>
               </div>
             </div>
 
@@ -118,8 +142,6 @@ const Contact = () => {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                
-                {/* Name */}
                 <div className="space-y-2">
                   <label className="block text-[11px] font-black text-slate-400 mb-1 uppercase tracking-widest ml-1">
                     Full Name
@@ -127,14 +149,14 @@ const Contact = () => {
                   <input
                     type="text"
                     name="name"
+                    required
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe"
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none placeholder:text-slate-300 transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium"
                   />
                 </div>
 
-                {/* Email */}
                 <div className="space-y-2">
                   <label className="block text-[11px] font-black text-slate-400 mb-1 uppercase tracking-widest ml-1">
                     Email Address
@@ -142,29 +164,14 @@ const Contact = () => {
                   <input
                     type="email"
                     name="email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none placeholder:text-slate-300 transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none transition-all font-medium"
                   />
                 </div>
 
-                {/* Phone */}
-                <div className="space-y-2">
-                  <label className="block text-[11px] font-black text-slate-400 mb-1 uppercase tracking-widest ml-1">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="080..."
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none placeholder:text-slate-300 transition-all font-medium"
-                  />
-                </div>
-
-                {/* Message */}
                 <div className="space-y-2">
                   <label className="block text-[11px] font-black text-slate-400 mb-1 uppercase tracking-widest ml-1">
                     Your Message
@@ -172,14 +179,14 @@ const Contact = () => {
                   <textarea
                     name="message"
                     rows="4"
+                    required
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Write your message here..."
-                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none placeholder:text-slate-300 resize-none transition-all font-medium"
+                    className="w-full px-5 py-4 bg-white text-sm rounded-2xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 focus:outline-none resize-none transition-all font-medium"
                   />
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
@@ -187,14 +194,11 @@ const Contact = () => {
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
-
               </form>
             </div>
-
           </div>
         </div>
       </div>
-
     </div>
   );
 };

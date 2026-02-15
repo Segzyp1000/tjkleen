@@ -13,7 +13,6 @@ function App() {
       <Route element={<MainLayer />}>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-
       </Route>
     </Routes>
     </>

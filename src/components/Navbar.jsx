@@ -71,7 +71,7 @@ const Navbar = () => {
                 <span className="text-2xl font-black tracking-tighter text-blue-500 leading-none">
                   TjayKleen
                 </span>
-                <span className="text-[9px] text-blue-400 font-bold uppercase tracking-[0.4em] mt-1.5 opacity-80">
+                <span className="text-[9px] text-gray-600 font-bold uppercase tracking-[0.4em] mt-1.5 opacity-80">
                   Premium Care
                 </span>
               </div>

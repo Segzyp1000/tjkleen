@@ -13,7 +13,7 @@ const Footer = () => {
               Thank you for choosing us
             </h2>
             <p className="text-lg text-slate-50 max-w-2xl mx-auto">
-            "Bringing the sparkle back to your wardrobe and we handled your items with care."
+            "Bringing sparkle to life responsibly, your clothes cleaned with care."
             </p>
           </div>
 

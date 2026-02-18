@@ -174,7 +174,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="text-white text-3xl md:text-6xl font-black tracking-tight"
+            className="text-white text-2xl md:text-4xl font-black tracking-tight"
           >
             Get In Touch
           </motion.h1>
